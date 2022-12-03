@@ -54,10 +54,10 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: "base_engine_debug_${{ matrix.target }}"
-          path: target/${{ matrix.target }}/debug/base_engine
+          path: target/${{ matrix.target }}/debug/base_engine.so
           if-no-files-found: error
       - uses: actions/upload-artifact@v3
         with:
           name: "base_engine_release_${{ matrix.target }}"
-          path: target/${{ matrix.target }}/release/base_engine
+          path: target/${{ matrix.target }}/release/base_engine.so
           if-no-files-found: error
