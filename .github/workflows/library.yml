@@ -45,16 +45,43 @@ jobs:
         run: cargo test --verbose --package base_engine --no-default-features --no-fail-fast --release
         continue-on-error: true
 
-      - name: Debug
-        run: ls -al -R target/
-
       - uses: actions/upload-artifact@v3
         with:
-          name: "base_engine_debug_${{ matrix.target }}"
-          path: target/${{ matrix.target }}/debug/base_engine.so
+          name: "base_engine_debug"
+          path: target/debug/libbase_engine.a
           if-no-files-found: error
       - uses: actions/upload-artifact@v3
         with:
-          name: "base_engine_release_${{ matrix.target }}"
-          path: target/${{ matrix.target }}/release/base_engine.so
+          name: "base_engine_debug"
+          path: target/debug/libbase_engine.d
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_debug"
+          path: target/debug/libbase_engine.rlib
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_debug"
+          path: target/debug/libbase_engine.so
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_release"
+          path: target/release/libbase_engine.a
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_release"
+          path: target/release/libbase_engine.d
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_release"
+          path: target/release/libbase_engine.rlib
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "base_engine_release"
+          path: target/release/libbase_engine.so
           if-no-files-found: error
