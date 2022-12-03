@@ -8,9 +8,7 @@ pub use logical_device::*;
 
 use std::sync::Arc;
 
-use vulkano::{
-    command_buffer::PrimaryAutoCommandBuffer, instance::Instance,
-};
+use vulkano::{command_buffer::PrimaryAutoCommandBuffer, instance::Instance};
 
 use crate::LogicalDevice;
 
