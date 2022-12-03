@@ -95,12 +95,7 @@ Linux only currently, but [Windows](https://www.appveyor.com/docs/windows-images
 
 ### CI Platform: Jenkins
 
-[![Build Status](https://jenkins.sakul-flee.de/buildStatus/icon?job=github_rust_multiplatform%2FBase-Project-Template%2Fmain)](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Project-Template/job/main/)
-
-[Jenkins](https://www.jenkins.io/) is another multi-purpose self-hosted CI platform.
-
-The configuration file can be found under `.jenkins/Jenkinsfile` and includes both: A Docker build version using the official [Rust Docker Image](https://hub.docker.com/_/rust) and a native installation (local Agent with [Rustup.rs](https://rustup.rs/) installed).  
-**You won't need both**, exclude whatever configuration you won't need.
+[![Build Status](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/badge/icon)](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/)
 
 ## Coverage
 
