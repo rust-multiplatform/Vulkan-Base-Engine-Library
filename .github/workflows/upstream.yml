@@ -8,14 +8,10 @@ jobs:
   merge-upstream:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: main # set the branch to merge to
-          fetch-depth: 0
-      - name: Merge Upstream
-        uses: exions/merge-upstream@v1
-        with:
-          upstream: rust-multiplatform/Base-Project-Template # set the upstream repo
-          upstream-branch: main # set the upstream branch to merge from
-          branch: main # set the branch to merge to
+      - uses: actions/checkout@v3
+        
+      - name: Add upstream
+        run: git remote add upstream https://github.com/rust-multiplatform/Base-Engine-Library
+
+      - name: Attempt merge
+        run: git pull upstream main
