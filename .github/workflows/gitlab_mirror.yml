@@ -10,8 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-   with:
-      submodules: recursive
+        with:
+          submodules: recursive
+
       - run: git fetch --unshallow origin
       - run: git fetch --prune --all
       - run: git push --prune https://sakul6499:$GITLAB_TOKEN@gitlab.com/rust-multiplatform/base-engine-library.git +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
