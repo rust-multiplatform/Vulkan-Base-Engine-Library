@@ -1,4 +1,4 @@
-# Rust Multi-Platform: Compute Engine Library
+# Rust Multi-Platform: Base Engine Library
 
 > THIS IS A LIBRARY.
 

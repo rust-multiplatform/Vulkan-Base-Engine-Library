@@ -14,10 +14,10 @@ orbs:
 workflows:
   build:
     jobs:
-      - compute_engine_library
+      - platform_linux
 
 jobs:
-  compute_engine_library:
+  platform_linux:
     docker:
       - image: cimg/rust:1.65
 
@@ -28,21 +28,21 @@ jobs:
       # Build
       - run:
           name: Build (debug)
-          command: cargo build --package compute_engine_library
+          command: cargo build --package platform_linux
       - run:
           name: Build (release)
-          command: cargo build --package compute_engine_library --release
+          command: cargo build --package platform_linux --release
 
       # Tests
       - run:
           name: Run Tests (debug)
-          command: cargo test --no-default-features --no-fail-fast --package compute_engine_library
+          command: cargo test --no-default-features --no-fail-fast --package platform_linux
       - run:
           name: Run Tests (release)
-          command: cargo test --no-default-features --no-fail-fast --package compute_engine_library --release
+          command: cargo test --no-default-features --no-fail-fast --package platform_linux --release
 
       # Upload Artifacts
       - store_artifacts:
-          path: target/debug/compute_engine_library
+          path: target/debug/platform_linux
       - store_artifacts:
           path: target/release/compute_engine_library
