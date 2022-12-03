@@ -9,6 +9,6 @@ repository = "https://github.com/rust-multiplatform/Base-Engine-Library"
 crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
-vulkano = "0.32.1"
+vulkano = "0.31.0"
 log = "0.4"
 env_logger = "0.10"
