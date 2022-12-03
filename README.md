@@ -44,34 +44,6 @@ cargo build --release
 
 ## Continuous Integration
 
-This project utilizes the GitHub Actions CI (= Continuous Integration) to showcase how to build for all platforms.
-For most platforms we just need a runner on the target platform (Windows, Linux or macOS) and install Rust.
-This can be simply done by following [rustup.rs](https://rustup.rs/) (check the [other install options](https://rust-lang.github.io/rustup/installation/other.html) for automatically installing inside an CI).
-Something like:
-
-```shell
-curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable --profile full -y
-```
-
-should work for most platforms.
-
-Note that we _may_ need more tools installed depending on the CI provider and platform.
-Check the host <-> target matrix at [Building & Running](#Building-&-Running)
-
-Additionally, often we have to `source` the profile changes. Something like:
-
-```shell
-source $HOME/.cargo/env
-```
-
-Additionally we have templates for other CI platforms.
-Please note that some platforms are just a basic example on how to build part of this project, e.g. building only the `platform_linux` package.
-This is done to save on build costs/minutes.
-
-> Please note, that if just one CI platform is failing, it is most likely linked to a plan or build credit issue on said platform.
-> GitHub Actions is **NOT** limited for open source repositories.
-> If GitHub Actions succeed, all other CI platforms _should_ succeed as well.
-
 ### CI Platform: GitHub Actions
 
 [![Base Engine Library](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml)
