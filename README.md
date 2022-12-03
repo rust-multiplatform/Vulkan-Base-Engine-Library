@@ -58,15 +58,7 @@ cargo build --release
 
 ### CI Platform: Travis
 
-[![Build Status](https://app.travis-ci.com/rust-multiplatform/Base-Project-Template.svg?branch=main)](https://app.travis-ci.com/rust-multiplatform/Base-Project-Template)
-
-On Travis we only build for Windows, macOS and Linux.
-Android and iOS _would_ be possible, however it requires a lot more work.
-The Android SDK and iOS SDK must be installed, xcode tool, cross compilers, etc.
-
-Additionally, we want to save on build credits here.
-
-> Note a failure or unknown status may be linked to used up credits and/or plan.
+[![Build Status](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library.svg?branch=main)](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library)
 
 ### CI Platform: GitLab CI
 
