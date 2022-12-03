@@ -10,8 +10,6 @@ use std::sync::Arc;
 
 use vulkano::{command_buffer::PrimaryAutoCommandBuffer, instance::Instance};
 
-use crate::LogicalDevice;
-
 pub trait BaseEngine {
     /// Kills the engine as a safety measure in case other things like winit aren't killing the Engine part.
     fn kill(&self) {
