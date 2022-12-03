@@ -62,11 +62,7 @@ cargo build --release
 
 ### CI Platform: GitLab CI
 
-To use GitLab CI we mirror our repository from GitHub to GitLab.
-
-Currently, we are only building `platform_linux`. Other platforms should be possible.
-
-[![pipeline status](https://gitlab.com/rust-multiplatform/base-project-template/badges/main/pipeline.svg)](https://gitlab.com/rust-multiplatform/base-project-template/-/commits/main)
+[![pipeline status](https://gitlab.com/rust-multiplatform/base-engine-library/badges/main/pipeline.svg)](https://gitlab.com/rust-multiplatform/base-engine-library/-/commits/main)
 
 ### CI Platform: BitBucket Pipeline
 
