@@ -70,21 +70,10 @@ cargo build --release
 
 ### CI Platform: TeamCity
 
-| Pipeline | Status Badge                                                                                                                                                        |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Build    | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseProjectTemplate_Build/statusIcon.svg) |
-| Test     | ![TeamCity test status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseProjectTemplate_Test/statusIcon.svg)   |
-
-To use [TeamCity](https://www.jetbrains.com/teamcity/) you either have to host your own Server, subscribe for a hosted (TeamCity Cloud) server or apply for your [OSS project being added for free](https://blog.jetbrains.com/teamcity/2016/10/hosted-teamcity-for-open-source-a-new-home/).
-
-Unfortunately, TeamCity depends highly on hosted Agents and for OSS only Linux (ubuntu) is available.
-Our pipeline only builds the `platform_linux` package (and internally `shared`).
-Building other platforms is possible (Windows: Cross-Compilation with MinGW, WebAssembly & Android: "Natively" supported), but requires a more complicated setup.
-
-Furthermore, the platforms macOS and iOS can't be build without having your own Agent running on a Mac.
-There is the [Docker-OSX](https://github.com/sickcodes/Docker-OSX) project which makes it possible to run macOS under Docker. Hard to setup and requires a lot of resources for "just building" an app.
-
-Windows builds would also be much easier if we'd have an agent for it.
+| Pipeline | Status Badge                                                                                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build    | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Build/statusIcon.svg) |
+| Test     | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Test/statusIcon.svg)  |
 
 ### CI Platform: AppVeyor
 
