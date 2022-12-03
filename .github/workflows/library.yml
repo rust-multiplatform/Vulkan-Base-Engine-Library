@@ -51,6 +51,9 @@ jobs:
         run: cargo test --verbose --package base_engine --no-default-features --no-fail-fast --target ${{ matrix.target }} --release
         continue-on-error: true
 
+      - name: Debug
+        run: ls -al -R target/
+
       - uses: actions/upload-artifact@v3
         with:
           name: "base_engine_debug_${{ matrix.target }}"
