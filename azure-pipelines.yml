@@ -1,5 +1,5 @@
 stages:
-  - stage: Base Engine Library
+  - stage: BaseEngineLibrary
     dependsOn: [] # Clears dependencies and allows parallel execution
     pool: 
       vmImage: ubuntu-latest
