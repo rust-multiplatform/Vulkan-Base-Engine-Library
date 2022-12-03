@@ -74,15 +74,7 @@ This is done to save on build costs/minutes.
 
 ### CI Platform: GitHub Actions
 
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_android.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_android.yml)
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_ios.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_ios.yml)
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_linux.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_linux.yml)
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_macos.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_macos.yml)
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_windows.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/platform_windows.yml)
-[![Rust](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/shared.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/shared.yml)
-
-On GitHub Actions we have a workflow file per package (platforms & shared).
-Each hast their own badge.
+[![Base Engine Library](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml)
 
 ### CI Platform: Azure DevOps
 
