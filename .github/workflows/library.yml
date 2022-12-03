@@ -48,40 +48,13 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: "base_engine_debug"
-          path: target/debug/libbase_engine.a
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_debug"
-          path: target/debug/libbase_engine.d
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_debug"
-          path: target/debug/libbase_engine.rlib
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_debug"
-          path: target/debug/libbase_engine.so
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_release"
-          path: target/release/libbase_engine.a
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_release"
-          path: target/release/libbase_engine.d
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_release"
-          path: target/release/libbase_engine.rlib
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "base_engine_release"
-          path: target/release/libbase_engine.so
+          path: |
+            target/debug/libbase_engine.a
+            target/debug/libbase_engine.d
+            target/debug/libbase_engine.rlib
+            target/debug/libbase_engine.so
+            target/release/libbase_engine.a
+            target/release/libbase_engine.d
+            target/release/libbase_engine.rlib
+            target/release/libbase_engine.so
           if-no-files-found: error
