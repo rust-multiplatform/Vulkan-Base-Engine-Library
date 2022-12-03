@@ -85,24 +85,19 @@ cargo build --release
 
 ## Coverage
 
-A combination of [grcov](https://github.com/mozilla/grcov) and [codecov.io](https://codecov.io) is used to provide code-to-test coverage.  
-**Please note that it is impossible to reach 100% coverage on some platforms as e.g. bindgen-code (i.e. dynamically generated code / macros) is NOT covered by `grcov` and certain platform specific tools (like `cargo-apk`) generate additional code that also is NOT included in the coverage.**
-
-Test-to-Code coverage status: [![codecov](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graph/badge.svg?token=XpGvuQVirP)](https://codecov.io/gh/rust-multiplatform/Base-Project-Template)
-
-Below are several charts showing/highlighting the distribution of **all platforms**.
+[![codecov](https://codecov.io/github/rust-multiplatform/Base-Engine-Library/branch/main/graph/badge.svg?token=9bK3wW9oNA)](https://codecov.io/github/rust-multiplatform/Base-Engine-Library)
 
 ### Sunburst
 
-![Sunburst](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/sunburst.svg?token=XpGvuQVirP)
+![Sunburst](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/sunburst.svg?token=9bK3wW9oNA)
 
 ### Grid
 
-![Grid](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/tree.svg?token=XpGvuQVirP)
+![Grid](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/tree.svg?token=9bK3wW9oNA)
 
 ### Icicle
 
-![Icicle](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/icicle.svg?token=XpGvuQVirP)
+![Icicle](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/icicle.svg?token=9bK3wW9oNA)
 
 ## Contributing & Getting Help
 
