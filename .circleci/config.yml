@@ -19,7 +19,7 @@ workflows:
 jobs:
   compute_engine_library:
     docker:
-      - image: cimg/rust:1.63
+      - image: cimg/rust:1.65
 
     steps:
       - checkout
