@@ -1,5 +1,5 @@
 [package]
-name = "compute_engine"
+name = "base_engine_library"
 version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
