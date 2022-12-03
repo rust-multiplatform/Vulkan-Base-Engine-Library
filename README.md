@@ -66,9 +66,7 @@ cargo build --release
 
 ### CI Platform: BitBucket Pipeline
 
-Unfortunately, BitBucket Pipelines don't have status badges.
-
-The pipelines are available at: [BitBucket Mirror](https://bitbucket.org/rust-multiplatform/base-project-template/)
+[BitBucket Mirror, no badges 🙃](https://bitbucket.org/rust-multiplatform/base-engine-library/pipelines/)
 
 ### CI Platform: TeamCity
 
