@@ -3,6 +3,9 @@
 mod logger;
 pub use logger::*;
 
+mod vertex;
+pub use vertex::*;
+
 mod logical_device;
 pub use logical_device::*;
 
