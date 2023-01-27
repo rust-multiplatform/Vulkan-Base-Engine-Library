@@ -19,7 +19,7 @@ workflows:
 jobs:
   base_engine:
     docker:
-      - image: cimg/rust:1.65
+      - image: cimg/rust:1.67
 
     steps:
       - checkout
