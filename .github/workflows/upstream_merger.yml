@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         repository: [rust-multiplatform/Compute-Engine-Library, rust-multiplatform/Graphical-Engine-Library]
 
@@ -32,6 +33,8 @@ jobs:
           echo "> Clone repository"
           git clone --recursive git@github.com:${{ matrix.repository }} ${{ matrix.repository }}
           cd '${{ matrix.repository }}'
+          git checkout main
+          git pull origin main
           
           echo "> Adding upstream"
           git remote add upstream https://github.com/rust-multiplatform/Base-Project-Template
@@ -39,8 +42,15 @@ jobs:
           echo "> Fetching ..."
           git fetch --all
 
+          echo "> Creating merge branch"
+          BRANCH="upstream-merge/$(date +%d.%m.%Y-%H.%M.%S)"
+          git checkout -b $BRANCH
+
           echo "> Merging ..."
-          git merge -s ours upstream/main
+          git config --global pull.rebase false  
+          git merge upstream/main || true
 
           echo "> Pushing ..."
-          git push origin main
+          git add . || true
+          git commit -m "Upstream merge ($(date +%d.%m.%Y %H:%M:%S))" || true
+          git push origin $BRANCH
