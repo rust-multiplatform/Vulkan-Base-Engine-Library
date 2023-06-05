@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         repository: [rust-multiplatform/Compute-Engine-Library, rust-multiplatform/Graphical-Engine-Library]
 
@@ -39,8 +40,15 @@ jobs:
           echo "> Fetching ..."
           git fetch --all
 
+          echo "> Creating merge branch"
+          BRANCH="merge-$(date +%d-%m-%Y_%H-%M-%S)"
+          git checkout -b $BRANCH
+
           echo "> Merging ..."
-          git merge -s ours upstream/main
+          git config --global pull.rebase false  
+          git merge upstream/main || true
 
           echo "> Pushing ..."
-          git push origin main
+          git add . || true
+          git commit -m "Upstream merge ($(date +%d.%m.%Y %H:%M:%S))" || true
+          git push origin $BRANCH
