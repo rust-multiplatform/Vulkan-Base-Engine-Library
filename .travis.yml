@@ -22,6 +22,7 @@ cache: cargo
 
 # Tasks
 script:
+<<<<<<< HEAD
   # Debug
   - cargo check --verbose --package base_engine_library
   - cargo build --verbose --package base_engine_library
@@ -30,3 +31,11 @@ script:
   - cargo check --release --verbose --package base_engine_library
   - cargo build --release --verbose --package base_engine_library
   - cargo test --release --verbose --no-default-features --no-fail-fast --package base_engine_library
+=======
+  # Shared
+  - cargo build --release --verbose --package shared
+  - cargo test --release --verbose --no-default-features --no-fail-fast --package shared
+  # Platform
+  - cargo build --release --verbose --package platform_${TRAVIS_OS_NAME}
+  - cargo test --release --verbose --no-default-features --no-fail-fast --package platform_${TRAVIS_OS_NAME}
+>>>>>>> upstream/main
