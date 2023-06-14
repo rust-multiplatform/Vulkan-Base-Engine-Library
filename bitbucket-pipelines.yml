@@ -4,6 +4,7 @@ pipelines:
   default:
     - parallel:
         - step:
+<<<<<<< HEAD
             name: check
             script:
               - rustc --version && cargo --version  # Print version info for debugging
@@ -14,9 +15,20 @@ pipelines:
             script:
               - rustc --version && cargo --version  # Print version info for debugging
               - cargo build --verbose --package base_engine_library
+=======
+            name: build
+            script:
+              - rustc --version && cargo --version # Print version information
+              - cargo build --verbose --release --package platform_linux
+>>>>>>> upstream/main
 
         - step:
             name: test
             script:
+<<<<<<< HEAD
               - rustc --version && cargo --version  # Print version info for debugging
               - cargo test --verbose --no-default-features --no-fail-fast --package base_engine_library
+=======
+              - rustc --version && cargo --version # Print version info
+              - cargo test --verbose --release --no-default-features --no-fail-fast --package platform_linux
+>>>>>>> upstream/main
