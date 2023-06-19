@@ -46,42 +46,38 @@ cargo build --release
 
 ### CI Platform: GitHub Actions
 
-[![Base Engine Library](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml)
+```shell
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable --profile full -y
+```
 
-### CI Platform: Azure DevOps
+should work for most platforms.
 
-[![Build Status](https://dev.azure.com/Rust-Multiplatform/Base%20Engine%20Library/_apis/build/status/Base%20Engine%20Library?branchName=main)](https://dev.azure.com/Rust-Multiplatform/Base%20Engine%20Library/_build/latest?definitionId=4&branchName=main)
+Note that we _may_ need more tools installed depending on the CI provider and platform.
+Check the host <-> target matrix at [Building & Running](#Building-&-Running)
 
-### CI Platform: CircleCI
+Additionally, often we have to `source` the profile changes. Something like:
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rust-multiplatform/Base-Engine-Library/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/rust-multiplatform/Base-Engine-Library/tree/main)
+```shell
+source $HOME/.cargo/env
+```
 
-### CI Platform: Travis
+Furthermore, we have templates for many other CI platforms if you prefer those.
 
-[![Build Status](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library.svg?branch=main)](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library)
+> Please note, that some CI platforms only showcase how to build a single platform (such as `platform_linux`). This is done to save on costs and time.
+> 
+> Furthermore, that if just one CI platform is failing, it is most likely linked to a plan or build credit issue on said platform.
+> GitHub Actions is **NOT** limited for open source repositories.
+> If GitHub Actions succeed, all other CI platforms _should_ succeed as well.
 
-### CI Platform: GitLab CI
+List of CI Examples/Templates:
 
-[![pipeline status](https://gitlab.com/rust-multiplatform/base-engine-library/badges/main/pipeline.svg)](https://gitlab.com/rust-multiplatform/base-engine-library/-/commits/main)
-
-### CI Platform: BitBucket Pipeline
-
-[BitBucket Mirror, no badges 🙃](https://bitbucket.org/rust-multiplatform/base-engine-library/pipelines/)
-
-### CI Platform: TeamCity
-
-| Pipeline | Status Badge                                                                                                                                                      |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Build    | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Build/statusIcon.svg) |
-| Test     | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Test/statusIcon.svg)  |
-
-### CI Platform: AppVeyor
-
-[![Build status](https://ci.appveyor.com/api/projects/status/oa83imlxgqueuyqk?svg=true)](https://ci.appveyor.com/project/Sakul6499/base-engine-library)
-
-### CI Platform: Jenkins
-
-[![Build Status](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/badge/icon)](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/)
+- [Rust-Multiplatform / CircleCI Example](https://github.com/rust-multiplatform/CI-Example-CircleCI)
+- [Rust Multiplatform / TeamCity Example](https://github.com/rust-multiplatform/CI-Example-TeamCity)
+- [Rust Multiplatform / GitLab Example](https://github.com/rust-multiplatform/CI-Example-GitLab-CI)
+- [Rust Multiplatform / BItBucket Example](https://github.com/rust-multiplatform/CI-Example-BitBucket-Pipelines)
+- [Rust Multiplatform / Travis Example](https://github.com/rust-multiplatform/CI-Example-Travis)
+- [Rust Multiplatform / Azure DevOps Example](https://github.com/rust-multiplatform/CI-Example-Azure-Pipelines)
+- [Rust Multiplatform / AppVeyor Example](https://github.com/rust-multiplatform/CI-Example-AppVeyor)
 
 ## Coverage
 
