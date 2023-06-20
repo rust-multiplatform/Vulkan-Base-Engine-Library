@@ -45,4 +45,4 @@ jobs:
           echo "> Pushing ..."
           git add --all || true
           git commit -m "Upstream merge ($(date +%d.%m.%Y_%H:%M:%S))" || true
-          git push origin main
+          git push origin upstream
