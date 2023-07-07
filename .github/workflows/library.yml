@@ -35,28 +35,28 @@ jobs:
         run: rustup target add x86_64-unknown-linux-gnu
 
       - name: Check
-        run: cargo check --verbose --package base_engine
+        run: cargo check --verbose --package base_engine_library
       - name: Build (Debug)
-        run: cargo build --verbose --package base_engine
+        run: cargo build --verbose --package base_engine_library
       - name: Build (Release)
-        run: cargo build --verbose --package base_engine --release
+        run: cargo build --verbose --package base_engine_library --release
       - name: Run Tests (Debug)
-        run: cargo test --verbose --package base_engine --no-default-features --no-fail-fast
+        run: cargo test --verbose --package base_engine_library --no-default-features --no-fail-fast
         continue-on-error: true
       - name: Run Tests (Release)
-        run: cargo test --verbose --package base_engine --no-default-features --no-fail-fast --release
+        run: cargo test --verbose --package base_engine_library --no-default-features --no-fail-fast --release
         continue-on-error: true
 
       - uses: actions/upload-artifact@v3
         with:
-          name: "base_engine_debug"
+          name: "base_engine_library_debug"
           path: |
-            target/debug/libbase_engine.a
-            target/debug/libbase_engine.d
-            target/debug/libbase_engine.rlib
-            target/debug/libbase_engine.so
-            target/release/libbase_engine.a
-            target/release/libbase_engine.d
-            target/release/libbase_engine.rlib
+            target/debug/libbase_engine_library.a
+            target/debug/libbase_engine_library.d
+            target/debug/libbase_engine_library.rlib
+            target/debug/libbase_engine_library.so
+            target/release/libbase_engine_library.a
+            target/release/libbase_engine_library.d
+            target/release/libbase_engine_library.rlib
             target/release/libbase_engine.so
           if-no-files-found: error

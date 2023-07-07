@@ -16,4 +16,4 @@ bytemuck = "1.13.1"
 
 # To reduce performance artifacts
 [profile.dev]
-opt-level = 1 
+opt-level = 1
