@@ -1,9 +1,14 @@
+<<<<<<< .merge_file_Njs5g2
 # Rust Multi-Platform: Base Project Template
 
 [![Multiplatform Build](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/multiplatform-build.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/multiplatform-build.yml)
+=======
+# Rust Multi-Platform: Base Engine Library
+>>>>>>> .merge_file_KMOBqx
 
-> ⚠️ THIS IS A TEMPLATE. ⚠️
+> THIS IS A LIBRARY.
 
+<<<<<<< .merge_file_Njs5g2
 This project is supported by the following platforms:
 
 - ✅ Platform: Windows
@@ -16,6 +21,9 @@ This project is supported by the following platforms:
 To use this project simply fork it (button in top right corner) into your own namespace.
 If you need some more advanced setup check out the [forking guide](FORKING.md).
 We also include a checklist for [what to do after forking](FORKING.md#what-is-important-to-do-after-forking).
+=======
+This project is supported by **all** Rust platforms and is to be used by other projects of the Rust Multi-Platform and may or may not be useless outside the project scope.
+>>>>>>> .merge_file_KMOBqx
 
 ## Licenses
 
@@ -27,6 +35,7 @@ This project is dual licensed in Rust's fashion:
 For your own project you can chose whichever fits you better.
 For templates/examples we recommend to also dual-licensing.
 
+<<<<<<< .merge_file_Njs5g2
 ## Project layout
 
 | Folder                                         | Description                                                                                                                         |
@@ -53,6 +62,8 @@ Simply said: For those special platforms we will use some cargo extensions which
 
 **Please check the `README.md` inside each platform to see how each platform is build, run and what you will need to do so.**
 
+=======
+>>>>>>> .merge_file_KMOBqx
 ## Targets & Architectures
 
 This project is aiming to work across all platforms **and targets**.
@@ -64,71 +75,26 @@ However, this should work on all targets. If you find an issue please report it.
 [Rust's Tier Policies](https://doc.rust-lang.org/rustc/target-tier-policy.html)
 [Rust's Platform Support & Targets](https://doc.rust-lang.org/rustc/platform-support.html)
 
-## Building & Running
+## Building
 
-**Building & Running all projects at once only works if your host platform has all required packages installed.**
-**Unfortunately, do to Apple's restrictions, macOS and iOS platforms can _only_ be build on macOS.**
-**This also means that macOS is the only host platform that can build _all_ platforms at once.**
+This is a simple Rust and Cargo project.  
+Simply use the build-in commands:
 
-However, we can build and run individual parts (`packages`) matching our host platform and we can use a combination of cross-compilation, Docker and/or Virtual Machines (VM) to build everything on one host platform.
-
-Host (top) vs. Target (left) compatibility matrix:
-
-|                         | Host: Windows                                                                                                                                                                                                                                                    | Host: Linux                                                                                                                                                                     | Host: macOS                                                                                                                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Target: Windows**     | ✅: [Visual Studio](https://visualstudio.com/)                                                                                                                                                                                                                    | 🔀: [MinGW](https://www.mingw-w64.org/)                                                                                                                                          | 🔀: [MinGW](https://www.mingw-w64.org/)                                                                                                         |
-| **Target: Linux**       | ⚠️: [WSL](https://docs.microsoft.com/en-us/windows/wsl/) or VM or Docker                                                                                                                                                                                          | ✅: [GCC](https://gcc.gnu.org/) or [Clang](https://clang.llvm.org/)                                                                                                              | 🔀: Docker or VM                                                                                                                                |
-| **Target: macOS**       | ⚠️: [Docker-OSX (inside WSL with Docker)](https://github.com/sickcodes/Docker-OSX) or [OSX-KVM (inside WSL or VM)](https://github.com/kholia/OSX-KVM) or [macOS-VirtualBox (inside/with WSL and/or MSYS2/MinGW)](https://github.com/myspaghetti/macos-virtualbox) | ⚠️: [Docker-OSX](https://github.com/sickcodes/Docker-OSX) or [OSX-KVM](https://github.com/kholia/OSX-KVM) or [macOS-VirtualBox](https://github.com/myspaghetti/macos-virtualbox) | ✅: [XCode](https://developer.apple.com/xcode/)                                                                                                 |
-| **Target: Android**     | 🔀: [Android Studio](https://developer.android.com/studio/) or [Android CommandLine-Tools](https://developer.android.com/studio/#command-tools)                                                                                                                   | 🔀: [Android Studio](https://developer.android.com/studio/) or [Android CommandLine-Tools](https://developer.android.com/studio/#command-tools)                                  | 🔀: [Android Studio](https://developer.android.com/studio/) or [Android CommandLine-Tools](https://developer.android.com/studio/#command-tools) |
-| **Target: iOS**         | ⚠️: [Docker-OSX (inside WSL with Docker)](https://github.com/sickcodes/Docker-OSX) or [OSX-KVM (inside WSL or VM)](https://github.com/kholia/OSX-KVM) or [macOS-VirtualBox (inside/with WSL and/or MSYS2/MinGW)](https://github.com/myspaghetti/macos-virtualbox) | ⚠️: [Docker-OSX](https://github.com/sickcodes/Docker-OSX) or [OSX-KVM](https://github.com/kholia/OSX-KVM) or [macOS-VirtualBox](https://github.com/myspaghetti/macos-virtualbox) | ✅: [XCode](https://developer.apple.com/xcode/)                                                                                                 |
-| **Target: WebAssembly** | ✅: [Wasm-Pack](https://rustwasm.github.io/wasm-pack/installer/)                                                                                                                                                                                                  | ✅: [Wasm-Pack](https://rustwasm.github.io/wasm-pack/installer/)                                                                                                                 | ✅: [Wasm-Pack](https://rustwasm.github.io/wasm-pack/installer/)                                                                                |
-
-✅ = Natively supported.
-🔀 = Cross-Compilation & Toolchain needed.
-⚠️ = Possible, but takes some more effort and/or special setups or VM to work.
-
-Building can be done via:
+For debug builds:  
 
 ```shell
-cargo build --package <package>
+cargo build
 ```
 
-Or run it directly (running will build the project beforehand!):
+For release builds:  
 
 ```shell
-cargo run --package <package>
+cargo build --release
 ```
-
-If there are tests present for the project, we can test them:
-
-```shell
-cargo test --package <package>
-```
-
-Or check if the project configuration is valid & build-able:
-
-```shell
-cargo check --package <package>
-```
-
-> Note: Adding `--release` to either of the commands will build a release version, instead of a debug version.
-
-**Do note that some platforms (like iOS and Android) require special tools and `cargo` extensions to properly build.**
-While we could do that step manually, it is much more convenient and easier to use this way.
-Check the `README.md` of a platform to learn more about requirements and tools.
-
-Since we can't build for all target platforms on a single host platform (without major modification; see above), the `--package <package>` part is very important.
-Simply replace `<package>` with the package name inside the `Cargo.toml` to build it.
-Names commonly will be `platform_<platform>` for platform-specific packages (e.g. `platform_windows` or `platform_ios`) or `shared` for the shared code.
-In case multiple shared projects are present, check their `Cargo.toml` for their name (commonly: folder name).
-
-However, since we share most of our code on all target platforms, we only really need to validate the code working on **one platform** (ideally your host platform for best performance or main target platform).
-Only rarely should we need platform-specific code which, if it exists, needs to be tested.
-Though, a continuous integration pipeline (CI) can take care of that for you mostly!
-Check [Continuous Integration](#Continuous-Integration) for more.
 
 ## Continuous Integration
 
+<<<<<<< .merge_file_Njs5g2
 [![Multiplatform Build](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/multiplatform-build.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Project-Template/actions/workflows/multiplatform-build.yml)
 
 This project utilizes the GitHub Actions CI (= Continuous Integration) to showcase how to build for all platforms.
@@ -160,27 +126,62 @@ Furthermore, we have templates for many other CI platforms if you prefer those:
 - [Rust Multiplatform / Travis Example](https://github.com/rust-multiplatform/CI-Example-Travis)
 - [Rust Multiplatform / Azure DevOps Example](https://github.com/rust-multiplatform/CI-Example-Azure-Pipelines)
 - [Rust Multiplatform / AppVeyor Example](https://github.com/rust-multiplatform/CI-Example-AppVeyor)
+=======
+### CI Platform: GitHub Actions
+
+[![Base Engine Library](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml/badge.svg)](https://github.com/rust-multiplatform/Base-Engine-Library/actions/workflows/library.yml)
+
+### CI Platform: Azure DevOps
+
+[![Build Status](https://dev.azure.com/Rust-Multiplatform/Base%20Engine%20Library/_apis/build/status/Base%20Engine%20Library?branchName=main)](https://dev.azure.com/Rust-Multiplatform/Base%20Engine%20Library/_build/latest?definitionId=4&branchName=main)
+
+### CI Platform: CircleCI
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rust-multiplatform/Base-Engine-Library/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/rust-multiplatform/Base-Engine-Library/tree/main)
+
+### CI Platform: Travis
+
+[![Build Status](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library.svg?branch=main)](https://app.travis-ci.com/rust-multiplatform/Base-Engine-Library)
+
+### CI Platform: GitLab CI
+
+[![pipeline status](https://gitlab.com/rust-multiplatform/base-engine-library/badges/main/pipeline.svg)](https://gitlab.com/rust-multiplatform/base-engine-library/-/commits/main)
+
+### CI Platform: BitBucket Pipeline
+
+[BitBucket Mirror, no badges 🙃](https://bitbucket.org/rust-multiplatform/base-engine-library/pipelines/)
+
+### CI Platform: TeamCity
+
+| Pipeline | Status Badge                                                                                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build    | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Build/statusIcon.svg) |
+| Test     | ![TeamCity build status](https://teamcity.jetbrains.com/app/rest/builds/buildType:id:OpenSourceProjects_RustMultiplatform_BaseEngineLibrary_Test/statusIcon.svg)  |
+
+### CI Platform: AppVeyor
+
+[![Build status](https://ci.appveyor.com/api/projects/status/oa83imlxgqueuyqk?svg=true)](https://ci.appveyor.com/project/Sakul6499/base-engine-library)
+
+### CI Platform: Jenkins
+
+[![Build Status](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/badge/icon)](https://jenkins.sakul-flee.de/job/github_rust_multiplatform/job/Base-Engine-Library/job/main/)
+>>>>>>> .merge_file_KMOBqx
 
 ## Coverage
 
-A combination of [grcov](https://github.com/mozilla/grcov) and [codecov.io](https://codecov.io) is used to provide code-to-test coverage.  
-**Please note that it is impossible to reach 100% coverage on some platforms as e.g. bindgen-code (i.e. dynamically generated code / macros) is NOT covered by `grcov` and certain platform specific tools (like `cargo-apk`) generate additional code that also is NOT included in the coverage.**
-
-Test-to-Code coverage status: [![codecov](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graph/badge.svg?token=XpGvuQVirP)](https://codecov.io/gh/rust-multiplatform/Base-Project-Template)
-
-Below are several charts showing/highlighting the distribution of **all platforms**.
+[![codecov](https://codecov.io/github/rust-multiplatform/Base-Engine-Library/branch/main/graph/badge.svg?token=9bK3wW9oNA)](https://codecov.io/github/rust-multiplatform/Base-Engine-Library)
 
 ### Sunburst
 
-![Sunburst](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/sunburst.svg?token=XpGvuQVirP)
+![Sunburst](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/sunburst.svg?token=9bK3wW9oNA)
 
 ### Grid
 
-![Grid](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/tree.svg?token=XpGvuQVirP)
+![Grid](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/tree.svg?token=9bK3wW9oNA)
 
 ### Icicle
 
-![Icicle](https://codecov.io/gh/rust-multiplatform/Base-Project-Template/branch/main/graphs/icicle.svg?token=XpGvuQVirP)
+![Icicle](https://codecov.io/gh/rust-multiplatform/Base-Engine-Library/branch/main/graphs/icicle.svg?token=9bK3wW9oNA)
 
 ## Contributing & Getting Help
 

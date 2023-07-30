@@ -21,12 +21,16 @@ jobs:
           path: target
           key: shared-${{ runner.os }}-target
 
-      - name: Cache Cargo-Home (compiled/installed binaries)
-        id: cargo-coverage-home
-        uses: actions/cache@v3
-        with:
-          path: /home/runner/.cargo
-          key: cargo-coverage-home
+    - name: Cache Cargo-Home (compiled/installed binaries)
+      id: cargo-coverage-home
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/.cargo
+        key: cargo-coverage-home
+    
+    - uses: actions/checkout@v3
+   with:
+      submodules: recursive
 
       - uses: actions/checkout@v3
         with:

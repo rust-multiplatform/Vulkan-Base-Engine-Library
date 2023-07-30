@@ -18,35 +18,36 @@
             "group": "build"
         },
         {
-            "label": "Check Shared library (Debug)",
+            "label": "Check Library (Debug)",
             "type": "shell",
-            "command": "cargo check --package shared",
+            "command": "cargo check --package base_engine",
             "dependsOn": [
                 "General Notice"
             ],
             "group": "build"
         },
         {
-            "label": "Check Platform Windows (Debug)",
+            "label": "Build Library (Debug)",
             "type": "shell",
-            "command": "cargo check --package platform_windows",
+            "command": "cargo build --package base_engine",
             "dependsOn": [
                 "General Notice"
             ],
             "group": "build"
         },
         {
-            "label": "Check Platform Linux (Debug)",
+            "label": "Build Library (Release)",
             "type": "shell",
-            "command": "cargo check --package platform_linux",
+            "command": "cargo build --release --package base_engine",
             "dependsOn": [
                 "General Notice"
             ],
             "group": "build"
         },
         {
-            "label": "Check Platform macOS (Debug)",
+            "label": "Test Library (Debug)",
             "type": "shell",
+<<<<<<< .merge_file_2PtDqi
             "command": "cargo check --package platform_macos",
             "dependsOn": [
                 "General Notice"
@@ -336,60 +337,18 @@
             "label": "Test Shared library (Release)",
             "type": "shell",
             "command": "cargo test --release --package shared",
+=======
+            "command": "cargo test --package base_engine",
+>>>>>>> .merge_file_PdB9dD
             "dependsOn": [
                 "General Notice"
             ],
             "group": "test"
         },
         {
-            "label": "Test Platform Windows (Release)",
+            "label": "Test Library (Release)",
             "type": "shell",
-            "command": "cargo test --release --package platform_windows",
-            "dependsOn": [
-                "General Notice"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "Test Platform Linux (Release)",
-            "type": "shell",
-            "command": "cargo test --release --package platform_linux",
-            "dependsOn": [
-                "General Notice"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "Test Platform macOS (Release)",
-            "type": "shell",
-            "command": "cargo test --release --package platform_macos",
-            "dependsOn": [
-                "General Notice"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "Test Platform iOS (Release)",
-            "type": "shell",
-            "command": "cargo xcodebuild test --release --package platform_ios",
-            "dependsOn": [
-                "General Notice"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "Test Platform Android (Release)",
-            "type": "shell",
-            "command": "cargo apk test --release --package platform_android",
-            "dependsOn": [
-                "General Notice"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "Test Platform WebAssembly (Release)",
-            "type": "shell",
-            "command": "wasm-pack test --release --package platform_webassembly --node",
+            "command": "cargo test --release --package base_engine",
             "dependsOn": [
                 "General Notice"
             ],

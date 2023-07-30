@@ -11,7 +11,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+<<<<<<< .merge_file_ONOvtd
         repository: [rust-multiplatform/Windowing-Template, rust-multiplatform/SlintUI-Template, rust-multiplatform/Base-Engine-Library, rust-multiplatform/Bevy-Template, rust-multiplatform/Graphical-Engine-Template, rust-multiplatform/Compute-Engine-Template, rust-multiplatform/Vulkan-Base-Engine-Library]
+=======
+        repository: [rust-multiplatform/Compute-Engine-Library, rust-multiplatform/Graphical-Engine-Library]
+>>>>>>> .merge_file_1gruu6
 
     steps:
       - name: Merge upstream
